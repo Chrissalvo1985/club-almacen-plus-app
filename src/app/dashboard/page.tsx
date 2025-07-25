@@ -787,7 +787,7 @@ export default function DashboardPage() {
                         </div>
                       </div>
                       <Button
-                        onClick={() => completeChallenge(selectedChallenge.id, { prices: {} })}
+                        onClick={() => completeChallenge(selectedChallenge.id)}
                         disabled={isLoading}
                         className="w-full"
                       >
@@ -811,7 +811,7 @@ export default function DashboardPage() {
                         </select>
                       </div>
                       <Button
-                        onClick={() => completeChallenge(selectedChallenge.id, { survey: {} })}
+                        onClick={() => completeChallenge(selectedChallenge.id)}
                         disabled={isLoading}
                         className="w-full"
                       >
