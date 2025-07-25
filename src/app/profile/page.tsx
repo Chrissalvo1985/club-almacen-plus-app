@@ -20,11 +20,23 @@ import {
   Users
 } from "lucide-react";
 
+interface UserData {
+  name: string;
+  businessName: string;
+  email?: string;
+  phone?: string;
+  address?: string;
+  points: number;
+  level: string;
+  rank: number;
+  totalMembers: number;
+}
+
 export default function ProfilePage() {
   const router = useRouter();
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState<UserData | null>(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [editedData, setEditedData] = useState({});
+  const [editedData, setEditedData] = useState<UserData | null>(null);
   const [notification, setNotification] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 

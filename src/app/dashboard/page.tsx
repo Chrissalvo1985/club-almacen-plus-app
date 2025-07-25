@@ -30,10 +30,19 @@ import {
 } from "lucide-react";
 import { formatPoints } from "@/lib/utils";
 
+interface UserData {
+  name: string;
+  businessName: string;
+  points: number;
+  level: string;
+  rank: number;
+  totalMembers: number;
+}
+
 export default function DashboardPage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("overview");
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState<UserData | null>(null);
   const [currentChallenges, setCurrentChallenges] = useState([]);
   const [availableRewards, setAvailableRewards] = useState([]);
   const [recentActivity, setRecentActivity] = useState([]);
