@@ -736,7 +736,7 @@ export default function DashboardPage() {
                         className="w-full"
                         onChange={(e) => {
                           if (e.target.files?.[0]) {
-                            completeChallenge(selectedChallenge.id, { file: e.target.files[0] });
+                            completeChallenge(selectedChallenge.id);
                           }
                         }}
                       />
@@ -755,7 +755,7 @@ export default function DashboardPage() {
                         className="w-full"
                         onChange={(e) => {
                           if (e.target.files?.[0]) {
-                            completeChallenge(selectedChallenge.id, { file: e.target.files[0] });
+                            completeChallenge(selectedChallenge.id);
                           }
                         }}
                       />
