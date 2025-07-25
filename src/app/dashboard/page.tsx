@@ -55,17 +55,17 @@ interface Reward {
   title: string;
   description: string;
   points: number;
-  icon: React.ReactElement;
-  available: boolean;
+  image: string;
+  category: string;
 }
 
 interface Activity {
   id: number;
-  type: string;
+  action: string;
   description: string;
   points: number;
   date: string;
-  icon: React.ReactElement;
+  type: string;
 }
 
 export default function DashboardPage() {
