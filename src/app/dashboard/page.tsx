@@ -263,28 +263,30 @@ export default function DashboardPage() {
     );
 
     // Agregar actividad
-    const newActivity = {
-      id: Date.now(),
-      action: "Completaste desafío",
-      description: `${selectedChallenge.title} +${selectedChallenge.points} pts`,
-      points: selectedChallenge.points,
-      date: "Ahora",
-      type: "earned"
-    };
-    setRecentActivity(prev => [newActivity, ...prev]);
+    if (selectedChallenge) {
+      const newActivity = {
+        id: Date.now(),
+        action: "Completaste desafío",
+        description: `${selectedChallenge.title} +${selectedChallenge.points} pts`,
+        points: selectedChallenge.points,
+        date: "Ahora",
+        type: "earned"
+      };
+      setRecentActivity(prev => [newActivity, ...prev]);
 
-    // Actualizar puntos del usuario
-    if (userData) {
-      const newPoints = userData.points + selectedChallenge.points;
-      const updatedUserData = { ...userData, points: newPoints };
-      setUserData(updatedUserData);
-      localStorage.setItem('userData', JSON.stringify(updatedUserData));
+      // Actualizar puntos del usuario
+      if (userData) {
+        const newPoints = userData.points + selectedChallenge.points;
+        const updatedUserData = { ...userData, points: newPoints };
+        setUserData(updatedUserData);
+        localStorage.setItem('userData', JSON.stringify(updatedUserData));
+      }
+
+      setNotification({
+        type: "success",
+        message: `¡Desafío completado! Ganaste ${selectedChallenge.points} puntos.`
+      });
     }
-
-    setNotification({
-      type: "success",
-      message: `¡Desafío completado! Ganaste ${selectedChallenge.points} puntos.`
-    });
 
     setIsLoading(false);
     setShowModal(false);
@@ -292,7 +294,7 @@ export default function DashboardPage() {
   };
 
   const redeemReward = async () => {
-    if (!userData || userData.points < selectedReward.points) {
+    if (!userData || !selectedReward || userData.points < selectedReward.points) {
       setNotification({
         type: "error",
         message: "No tienes suficientes puntos para canjear este premio."
