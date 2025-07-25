@@ -80,7 +80,7 @@ export default function DashboardPage() {
   const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(null);
   const [selectedReward, setSelectedReward] = useState<Reward | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [notification, setNotification] = useState<{type: string; message: string} | null>(null);
+  const [notification, setNotification] = useState<{type: "success" | "error" | "warning" | "info"; message: string} | null>(null);
 
   // Cargar datos del usuario al montar el componente
   useEffect(() => {
