@@ -39,13 +39,42 @@ interface UserData {
   totalMembers: number;
 }
 
+interface Challenge {
+  id: number;
+  title: string;
+  description: string;
+  points: number;
+  deadline: string;
+  status: string;
+  icon: JSX.Element;
+  type: string;
+}
+
+interface Reward {
+  id: number;
+  title: string;
+  description: string;
+  points: number;
+  icon: JSX.Element;
+  available: boolean;
+}
+
+interface Activity {
+  id: number;
+  type: string;
+  description: string;
+  points: number;
+  date: string;
+  icon: JSX.Element;
+}
+
 export default function DashboardPage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("overview");
   const [userData, setUserData] = useState<UserData | null>(null);
-  const [currentChallenges, setCurrentChallenges] = useState([]);
-  const [availableRewards, setAvailableRewards] = useState([]);
-  const [recentActivity, setRecentActivity] = useState([]);
+  const [currentChallenges, setCurrentChallenges] = useState<Challenge[]>([]);
+  const [availableRewards, setAvailableRewards] = useState<Reward[]>([]);
+  const [recentActivity, setRecentActivity] = useState<Activity[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState("");
   const [selectedChallenge, setSelectedChallenge] = useState(null);
