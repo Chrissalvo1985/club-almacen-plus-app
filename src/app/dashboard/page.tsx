@@ -247,7 +247,7 @@ export default function DashboardPage() {
     setShowModal(true);
   };
 
-  const completeChallenge = async (challengeId) => {
+  const completeChallenge = async (challengeId: number) => {
     setIsLoading(true);
     
     // Simular envío
