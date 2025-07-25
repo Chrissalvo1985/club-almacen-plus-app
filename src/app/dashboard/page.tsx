@@ -11,26 +11,21 @@ import {
   Camera, 
   Receipt, 
   Store, 
-  Smartphone,
   TrendingUp,
   Award,
   Star,
   Users,
   Target,
   Calendar,
-  ChevronRight,
   Plus,
-  Upload,
   CheckCircle,
   Clock,
   Zap,
   LogOut,
   Bell,
   Settings,
-  X,
   Camera as CameraIcon,
   FileText,
-  DollarSign,
   MessageSquare
 } from "lucide-react";
 import { formatPoints } from "@/lib/utils";
@@ -214,7 +209,7 @@ export default function DashboardPage() {
     setShowModal(true);
   };
 
-  const completeChallenge = async (challengeId, submissionData) => {
+  const completeChallenge = async (challengeId) => {
     setIsLoading(true);
     
     // Simular envío

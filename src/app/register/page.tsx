@@ -10,10 +10,7 @@ import {
   EyeOff, 
   CheckCircle,
   Store,
-  User,
-  Mail,
-  Phone,
-  MapPin
+  User
 } from "lucide-react";
 
 export default function RegisterPage() {

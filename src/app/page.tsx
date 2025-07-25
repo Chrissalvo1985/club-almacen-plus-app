@@ -10,9 +10,7 @@ import {
   TrendingUp, 
   Camera, 
   Receipt, 
-  Star,
   ArrowRight,
-  CheckCircle,
   Smartphone,
   Store,
   Award

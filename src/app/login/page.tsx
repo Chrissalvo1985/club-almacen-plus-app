@@ -9,8 +9,7 @@ import {
   Eye, 
   EyeOff, 
   Mail,
-  Lock,
-  User
+  Lock
 } from "lucide-react";
 
 export default function LoginPage() {
