@@ -77,10 +77,10 @@ export default function DashboardPage() {
   const [recentActivity, setRecentActivity] = useState<Activity[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState("");
-  const [selectedChallenge, setSelectedChallenge] = useState(null);
-  const [selectedReward, setSelectedReward] = useState(null);
+  const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(null);
+  const [selectedReward, setSelectedReward] = useState<Reward | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [notification, setNotification] = useState(null);
+  const [notification, setNotification] = useState<{type: string; message: string} | null>(null);
 
   // Cargar datos del usuario al montar el componente
   useEffect(() => {
@@ -235,13 +235,13 @@ export default function DashboardPage() {
     }
   ] : [];
 
-  const handleParticipate = (challenge) => {
+  const handleParticipate = (challenge: Challenge) => {
     setSelectedChallenge(challenge);
     setModalType("challenge");
     setShowModal(true);
   };
 
-  const handleRedeem = (reward) => {
+  const handleRedeem = (reward: Reward) => {
     setSelectedReward(reward);
     setModalType("reward");
     setShowModal(true);
