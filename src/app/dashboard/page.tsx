@@ -46,7 +46,7 @@ interface Challenge {
   points: number;
   deadline: string;
   status: string;
-  icon: JSX.Element;
+  icon: React.ReactElement;
   type: string;
 }
 
@@ -55,7 +55,7 @@ interface Reward {
   title: string;
   description: string;
   points: number;
-  icon: JSX.Element;
+  icon: React.ReactElement;
   available: boolean;
 }
 
@@ -65,7 +65,7 @@ interface Activity {
   description: string;
   points: number;
   date: string;
-  icon: JSX.Element;
+  icon: React.ReactElement;
 }
 
 export default function DashboardPage() {
